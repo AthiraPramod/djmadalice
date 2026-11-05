@@ -1,0 +1,33 @@
+{
+  "_HOW_TO_EDIT": "Change only the text between quotes. Keep the commas and brackets. To hide a section, leave its value empty: \"\" or [].",
+  "artistName": "MAD ALICE",
+  "tagline": "Creating the journeys, I once needed.",
+  "genre": "",
+  "city": "",
+  "about": "MAD ALICE plays techno as a journey: sunlit melodic openings that turn, slowly, into dark and driving floors. Every set is built to take a room somewhere it did not expect to go.",
+  "bookingEmail": "madalice1997@gmail.com",
+  "instagramUrl": "",
+  "soundcloudUrl": "",
+  "mixcloudUrl": "",
+  "upcomingGigs": [
+    {
+      "date": "",
+      "event": "Coffee Rave",
+      "venue": "Savora",
+      "city": "Calicut"
+    }
+  ],
+  "pastGigs": [],
+  "photos": [
+    {
+      "file": "photos/booth.png",
+      "alt": "MAD ALICE at the decks under warm stage lights",
+      "downloadName": "MAD-ALICE-booth.png"
+    },
+    {
+      "file": "photos/sunset.jpg",
+      "alt": "MAD ALICE with headphones on a palm-lined path at sunset",
+      "downloadName": "MAD-ALICE-sunset.jpg"
+    }
+  ]
+}
