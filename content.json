@@ -1,33 +1,33 @@
 {
-  "_HOW_TO_EDIT": "Change only the text between quotes. Keep the commas and brackets. To hide a section, leave its value empty: \"\" or [].",
+  "_HOW_TO_EDIT": "Change only the text between quotes. Keep commas, quotes and brackets. Empty \"\" or [] hides that part of the site.",
+
   "artistName": "MAD ALICE",
   "tagline": "Creating the journeys, I once needed.",
   "genre": "",
   "city": "",
+
   "about": "MAD ALICE plays techno as a journey: sunlit melodic openings that turn, slowly, into dark and driving floors. Every set is built to take a room somewhere it did not expect to go.",
+
   "bookingEmail": "madalice1997@gmail.com",
   "instagramUrl": "",
   "soundcloudUrl": "",
-  "mixcloudUrl": "",
-  "upcomingGigs": [
-    {
-      "date": "",
-      "event": "Coffee Rave",
-      "venue": "Savora",
-      "city": "Calicut"
-    }
+
+  "_TRANSMISSIONS": "Releases and recorded mixes. Example: { \"title\": \"Coffee Rave Live\", \"date\": \"Nov 2026\", \"type\": \"Mix\", \"url\": \"https://soundcloud.com/...\" }",
+  "transmissions": [],
+
+  "_LIVE": "Set videos (YouTube or Instagram links). Example: { \"title\": \"Sunset to Dark — Savora\", \"date\": \"Nov 2026\", \"url\": \"https://youtube.com/...\" }",
+  "liveSets": [],
+
+  "nextStops": [
+    { "date": "", "event": "Coffee Rave", "venue": "Savora", "city": "Calicut" }
   ],
-  "pastGigs": [],
-  "photos": [
-    {
-      "file": "photos/booth.png",
-      "alt": "MAD ALICE at the decks under warm stage lights",
-      "downloadName": "MAD-ALICE-booth.png"
-    },
-    {
-      "file": "photos/sunset.jpg",
-      "alt": "MAD ALICE with headphones on a palm-lined path at sunset",
-      "downloadName": "MAD-ALICE-sunset.jpg"
-    }
+
+  "journeysSoFar": [],
+
+  "frames": [
+    { "file": "photos/booth.png", "alt": "MAD ALICE at the decks under warm stage lights", "downloadName": "MAD-ALICE-booth.png" },
+    { "file": "photos/sunset.jpg", "alt": "MAD ALICE with headphones on a palm-lined path at sunset", "downloadName": "MAD-ALICE-sunset.jpg" },
+    { "file": "photos/portrait-bw.jpg", "alt": "MAD ALICE, black and white portrait", "downloadName": "MAD-ALICE-portrait-bw.jpg" },
+    { "file": "photos/editorial-bw.jpg", "alt": "MAD ALICE at the booth, black and white", "downloadName": "MAD-ALICE-editorial-bw.jpg" }
   ]
 }

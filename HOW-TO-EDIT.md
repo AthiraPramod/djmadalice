@@ -1,23 +1,31 @@
 # How to edit djmadalice.com (no coding needed)
 
-All the words, links and gigs live in ONE file: **content.json**.
+All words, links, mixes, sets and gigs live in ONE file: **content.json**.
 
-## Edit on your phone or laptop
-1. Open github.com → your repo **djmadalice** → tap **content.json**.
-2. Tap the ✏️ pencil (Edit).
-3. Change only the text **between the quotes**. Keep commas, brackets and quotes as they are.
-4. Tap **Commit changes**. The site updates by itself in about 1 minute.
+## Edit from your phone or laptop
+1. github.com → repo **djmadalice** → tap **content.json** → tap the ✏️ pencil.
+2. Change only the text **between quotes**. Keep commas, quotes and brackets.
+3. Tap **Commit changes**. The site updates by itself in about a minute.
 
-## Common edits
-- **Add your Instagram:** "instagramUrl": "https://instagram.com/yourhandle"
-- **Add your mix:** "soundcloudUrl": "https://soundcloud.com/..."
-- **Add a gig** (copy a line, keep the comma between gigs):
-  { "date": "22 Nov 2026", "event": "Coffee Rave", "venue": "Savora", "city": "Calicut" },
-- **Move a gig to "Played":** cut it from upcomingGigs, paste into pastGigs.
-- **Hide something:** leave it empty: "" or [].
+## What each part of content.json controls
+| In content.json | Section on the site |
+|---|---|
+| about | Down the rabbit hole |
+| transmissions | Transmissions (releases and mixes) |
+| liveSets | Live from the booth (set videos) |
+| nextStops | Next stops (upcoming gigs) |
+| journeysSoFar | Journeys so far (past gigs; hidden while empty) |
+| frames | Frames (press photos) |
 
-## Add a new photo
-1. In the repo, open the **photos** folder → **Add file → Upload files**.
-2. Add a line to "photos" in content.json with the file name.
+## Copy-paste examples
+- Mix:  { "title": "Coffee Rave Live", "date": "Nov 2026", "type": "Mix", "url": "https://soundcloud.com/..." }
+- Set video:  { "title": "Sunset to Dark", "date": "Nov 2026", "url": "https://youtube.com/..." }
+- Gig:  { "date": "22 Nov 2026", "event": "Coffee Rave", "venue": "Savora", "city": "Calicut" }
+Put a comma between two items in the same list.
 
-If anything breaks, tell Sunny (Claude) "the site looks broken" — every change is saved in GitHub history and can be undone.
+After a gig: cut it from nextStops and paste it into journeysSoFar.
+
+## Add a photo
+Repo → **photos** folder → **Add file → Upload files**. Then add a line to "frames" with its file name.
+
+Something broke? Tell Sunny (Claude). Every change is saved in GitHub history and can be undone.

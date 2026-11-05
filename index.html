@@ -4,19 +4,20 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>MAD ALICE</title>
-<meta name="description" content="MAD ALICE — Creating the journeys, I once needed. Bookings and press kit.">
+<meta name="description" content="MAD ALICE — Creating the journeys, I once needed. Mixes, live sets, gigs, press kit and bookings.">
 <meta property="og:title" content="MAD ALICE">
 <meta property="og:description" content="Creating the journeys, I once needed.">
-<meta property="og:image" content="https://djmadalice.com/photos/booth.png">
+<meta property="og:image" content="https://djmadalice.com/photos/editorial-bw.jpg">
 <meta property="og:url" content="https://djmadalice.com">
-<meta name="theme-color" content="#0f0d0c">
+<meta name="theme-color" content="#0b0a09">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;800&family=Instrument+Sans:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Display:wght@700;900&family=Big+Shoulders+Display:wght@800&family=Instrument+Sans:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400&display=swap">
 <style>
-/* One dark stage: warm club black, amber stage light. Condensed display type for the name, quiet sans for words, mono for labels. */
+/* Raw warehouse: near-black concrete, film grain, amber work-light. Stencil display type like crate labels; mono for labels; quiet sans for words. */
 :root{
-  --bg:#0f0d0c; --surface:#1a1614; --fg:#efe8e2; --muted:#9a8f88; --line:#2c2522; --ember:#e0954a;
+  --bg:#0b0a09; --surface:#161311; --fg:#ece5de; --muted:#8f857e; --line:#27211e; --ember:#e0954a; --rust:#b5562f;
+  --stencil:"Big Shoulders Stencil Display","Big Shoulders Display","Arial Narrow",Impact,sans-serif;
   --display:"Big Shoulders Display","Arial Narrow",Impact,sans-serif;
   --body:"Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
   --mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
@@ -24,93 +25,94 @@
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
+html,body{overflow-x:clip}
 body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:17px;line-height:1.6}
+/* film grain over everything */
+body::before{content:"";position:fixed;inset:-50%;pointer-events:none;z-index:50;opacity:.07;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  animation:grain 1.2s steps(6) infinite}
+@keyframes grain{0%{transform:translate(0,0)}20%{transform:translate(-3%,2%)}40%{transform:translate(2%,-3%)}60%{transform:translate(-2%,-1%)}80%{transform:translate(3%,3%)}100%{transform:translate(0,0)}}
 img{max-width:100%;display:block}
 [hidden]{display:none!important}
 a{color:inherit}
-.wrap{max-width:1120px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left));padding-right:max(20px,env(safe-area-inset-right))}
+.wrap{max-width:1140px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left));padding-right:max(20px,env(safe-area-inset-right))}
 
-/* nav */
-nav{position:sticky;top:0;z-index:10;background:rgba(15,13,12,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav{position:sticky;top:0;z-index:30;background:rgba(11,10,9,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px}
-.brand{font-family:var(--display);font-weight:800;font-size:22px;letter-spacing:.06em;text-decoration:none}
+.brand{font-family:var(--stencil);font-weight:900;font-size:24px;letter-spacing:.08em;text-decoration:none}
 .brand span{color:var(--ember)}
-.links{display:flex;gap:22px;flex-wrap:wrap}
-.links a{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;color:var(--muted)}
+.links{display:flex;gap:20px;flex-wrap:wrap}
+.links a{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;color:var(--muted)}
 .links a:hover{color:var(--ember)}
 
-/* hero */
 .hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
-.hero-bg{position:absolute;inset:0;background-size:cover;background-position:center 30%;opacity:.38;filter:saturate(.9)}
-.hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,13,12,.2),var(--bg) 92%)}
-.hero .wrap{position:relative;padding-block:clamp(90px,16vw,190px) clamp(48px,8vw,90px);display:grid;gap:22px}
+.hero-bg{position:absolute;inset:0;background-size:cover;background-position:center 28%;opacity:.42;filter:grayscale(1) contrast(1.1)}
+.hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,10,9,.15),var(--bg) 94%)}
+.hero .wrap{position:relative;padding-block:clamp(100px,17vw,200px) clamp(48px,8vw,90px);display:grid;gap:20px}
 .meta{font-family:var(--mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--ember)}
-h1{font-family:var(--display);font-weight:800;text-transform:uppercase;margin:0;line-height:.84;font-size:clamp(84px,19vw,240px);letter-spacing:.01em}
+h1{font-family:var(--stencil);font-weight:900;text-transform:uppercase;margin:0;line-height:.82;font-size:clamp(88px,20vw,250px);letter-spacing:.01em}
 h1 .dot{color:var(--ember)}
-.tagline{font-style:italic;color:var(--fg);opacity:.85;font-size:clamp(19px,2.6vw,24px);margin:0;max-width:32ch}
-.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:10px}
+.tagline{font-style:italic;opacity:.88;font-size:clamp(19px,2.6vw,24px);margin:0;max-width:32ch}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}
 .btn{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;border:1px solid var(--line);padding:13px 18px;background:transparent;color:var(--fg);cursor:pointer;transition:border-color .2s,color .2s,background .2s;display:inline-block}
 .btn:hover{border-color:var(--ember);color:var(--ember)}
 .btn.primary{background:var(--ember);border-color:var(--ember);color:#1a1210}
 .btn.primary:hover{background:transparent;color:var(--ember)}
-.btn:focus-visible,.links a:focus-visible{outline:2px solid var(--ember);outline-offset:3px}
+.btn:focus-visible,.links a:focus-visible,.item a:focus-visible{outline:2px solid var(--ember);outline-offset:3px}
 
-/* sections */
-section{padding-block:clamp(56px,9vw,110px);border-bottom:1px solid var(--line)}
-.label{font-family:var(--mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--ember);margin:0 0 14px}
-h2{font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:clamp(44px,7vw,84px);line-height:.9;margin:0 0 28px}
-.about p:not(.label){font-size:clamp(19px,2.2vw,23px);max-width:40ch;margin:0;color:var(--fg)}
+section{padding-block:clamp(60px,9vw,120px);border-bottom:1px solid var(--line)}
+.head{display:flex;align-items:baseline;gap:18px;flex-wrap:wrap;margin-bottom:30px}
+.chapter{font-family:var(--mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--ember)}
+h2{font-family:var(--stencil);font-weight:900;text-transform:uppercase;font-size:clamp(36px,9vw,92px);line-height:.88;margin:0;letter-spacing:.01em}
+.lede{color:var(--muted);margin:-14px 0 30px;max-width:48ch}
+.about-text{font-size:clamp(19px,2.3vw,24px);max-width:40ch;margin:0}
 .empty{color:var(--muted);font-style:italic;margin:0}
 
-/* listen */
-.listen-row{display:flex;gap:12px;flex-wrap:wrap}
+/* list rows: transmissions, live sets, gigs */
+.list{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.item{display:grid;grid-template-columns:150px 1fr auto;gap:18px;align-items:baseline;padding:20px 0;border-bottom:1px solid var(--line)}
+.item .d{font-family:var(--mono);font-size:13px;color:var(--ember);letter-spacing:.06em;text-transform:uppercase}
+.item .t{font-family:var(--display);font-weight:800;font-size:28px;text-transform:uppercase;letter-spacing:.03em;line-height:1.05}
+.item .p{color:var(--muted)}
+.item a.t{text-decoration:none}
+.item a.t:hover{color:var(--ember)}
 
-/* gigs */
-.gigs{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
-.gigs li{display:grid;grid-template-columns:150px 1fr auto;gap:18px;align-items:baseline;padding:20px 0;border-bottom:1px solid var(--line)}
-.gig-date{font-family:var(--mono);font-size:13px;color:var(--ember);letter-spacing:.06em;text-transform:uppercase}
-.gig-event{font-family:var(--display);font-weight:500;font-size:28px;text-transform:uppercase;letter-spacing:.03em}
-.gig-place{color:var(--muted)}
-h3{font-family:var(--mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin:42px 0 6px;font-weight:400}
-
-/* press */
-.photos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(14px,2.5vw,28px);align-items:start}
-.photos figure{margin:0;display:grid;gap:12px;justify-items:start}
-.photos figure:nth-child(2n){margin-top:clamp(0px,6vw,72px)}
+.frames{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(14px,2.5vw,28px);align-items:start}
+.frames figure{margin:0;display:grid;gap:12px;justify-items:start}
+.frames figure:nth-child(2n){margin-top:clamp(0px,6vw,72px)}
 .frame{background:var(--surface);overflow:hidden;aspect-ratio:3/4;width:100%}
-.frame img{width:100%;height:100%;object-fit:cover;transition:transform .8s ease}
-figure:hover .frame img{transform:scale(1.03)}
-.logo-box{margin-top:56px;display:grid;gap:16px}
+.frame img{width:100%;height:100%;object-fit:cover;filter:grayscale(.15);transition:transform .8s ease,filter .4s}
+figure:hover .frame img{transform:scale(1.03);filter:none}
+.logo-box{margin-top:64px;display:grid;gap:16px}
 .logo-tile{background:var(--surface);padding:clamp(24px,5vw,56px);display:flex;justify-content:center}
 .logo-tile canvas{width:100%;max-width:620px;height:auto}
 .row{display:flex;gap:12px;flex-wrap:wrap}
 
-/* booking */
-.book .mail{font-family:var(--mono);font-size:clamp(16px,2.6vw,24px);word-break:break-all;user-select:all;margin:0 0 22px;display:block}
+.book .mail{font-family:var(--mono);font-size:clamp(16px,2.6vw,24px);word-break:break-all;margin:0 0 22px;display:block}
 footer{padding-block:34px;color:var(--muted);font-size:14px}
 footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
-.toast{position:fixed;left:50%;bottom:calc(22px + env(safe-area-inset-bottom));transform:translateX(-50%);background:var(--surface);border:1px solid var(--line);padding:10px 16px;font-size:14px;z-index:20}
+.toast{position:fixed;left:50%;bottom:calc(22px + env(safe-area-inset-bottom));transform:translateX(-50%);background:var(--surface);border:1px solid var(--line);padding:10px 16px;font-size:14px;z-index:60}
 
-@media (max-width:640px){
-  .links{gap:14px}
+@media (max-width:700px){
   .links a.opt{display:none}
-  .photos{grid-template-columns:1fr}
-  .photos figure:nth-child(2n){margin-top:0}
-  .gigs li{grid-template-columns:1fr;gap:4px}
+  .frames{grid-template-columns:1fr}
+  .frames figure:nth-child(2n){margin-top:0}
+  .item{grid-template-columns:1fr;gap:4px}
 }
-@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}body::before{animation:none}}
 </style>
 </head>
 <body>
 
 <nav>
   <div class="wrap">
-    <a class="brand" href="#top" data-c="artistName">MAD ALICE</a>
+    <a class="brand" href="#top">MAD ALICE<span>.</span></a>
     <div class="links">
-      <a href="#about" class="opt">About</a>
-      <a href="#listen" class="opt">Listen</a>
-      <a href="#gigs">Gigs</a>
-      <a href="#press">Press</a>
+      <a href="#rabbit-hole" class="opt">About</a>
+      <a href="#transmissions">Mixes</a>
+      <a href="#live" class="opt">Sets</a>
+      <a href="#next-stops">Gigs</a>
+      <a href="#frames" class="opt">Photos</a>
       <a href="#book">Book</a>
     </div>
   </div>
@@ -123,47 +125,58 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     <h1><span data-c="artistName">MAD ALICE</span><span class="dot">.</span></h1>
     <p class="tagline" data-c="tagline">Creating the journeys, I once needed.</p>
     <div class="cta">
-      <a class="btn primary" href="#book">Book MAD ALICE</a>
-      <a class="btn" href="#press">Press kit</a>
+      <a class="btn primary" href="#book">Book the journey</a>
+      <a class="btn" href="#transmissions">Listen</a>
     </div>
   </div>
 </header>
 
 <main>
-  <section class="about" id="about">
+  <section id="rabbit-hole">
     <div class="wrap">
-      <p class="label">About</p>
-      <p data-c="about"></p>
+      <div class="head"><span class="chapter">Chapter I</span><h2>Down the rabbit hole</h2></div>
+      <p class="about-text" data-c="about"></p>
     </div>
   </section>
 
-  <section id="listen">
+  <section id="transmissions">
     <div class="wrap">
-      <p class="label">Listen</p>
-      <h2>Sets &amp; mixes</h2>
-      <div class="listen-row" id="listen-row"></div>
-      <p class="empty" id="listen-empty">First recorded mix coming soon.</p>
+      <div class="head"><span class="chapter">Chapter II</span><h2>Transmissions</h2></div>
+      <p class="lede">Releases and recorded mixes.</p>
+      <ul class="list" id="transmissions-list"></ul>
+      <p class="empty" id="transmissions-empty">The first transmission is being recorded.</p>
     </div>
   </section>
 
-  <section id="gigs">
+  <section id="live">
     <div class="wrap">
-      <p class="label">Live</p>
-      <h2>Gigs</h2>
-      <ul class="gigs" id="upcoming"></ul>
-      <p class="empty" id="upcoming-empty" hidden>New dates coming soon.</p>
-      <div id="past-wrap" hidden>
-        <h3>Played</h3>
-        <ul class="gigs" id="past"></ul>
-      </div>
+      <div class="head"><span class="chapter">Chapter III</span><h2>Live from the booth</h2></div>
+      <p class="lede">Sets, filmed where they happened.</p>
+      <ul class="list" id="live-list"></ul>
+      <p class="empty" id="live-empty">Footage from the booth, coming soon.</p>
     </div>
   </section>
 
-  <section id="press">
+  <section id="next-stops">
     <div class="wrap">
-      <p class="label">Press kit</p>
-      <h2>Photos &amp; logo</h2>
-      <div class="photos" id="photos"></div>
+      <div class="head"><span class="chapter">Chapter IV</span><h2>Next stops</h2></div>
+      <ul class="list" id="next-list"></ul>
+      <p class="empty" id="next-empty" hidden>New stops are being mapped.</p>
+    </div>
+  </section>
+
+  <section id="journeys" hidden>
+    <div class="wrap">
+      <div class="head"><span class="chapter">Chapter V</span><h2>Journeys so far</h2></div>
+      <ul class="list" id="journeys-list"></ul>
+    </div>
+  </section>
+
+  <section id="frames">
+    <div class="wrap">
+      <div class="head"><span class="chapter">Press kit</span><h2>Frames</h2></div>
+      <p class="lede">Press photos and logo, free to download for promoters and press.</p>
+      <div class="frames" id="frames-grid"></div>
       <div class="logo-box">
         <div class="logo-tile"><canvas id="logo" role="img" aria-label="MAD ALICE logo"></canvas></div>
         <div class="row">
@@ -176,13 +189,14 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
   <section class="book" id="book">
     <div class="wrap">
-      <p class="label">Bookings</p>
-      <h2>Clubs, festivals &amp; private events</h2>
+      <div class="head"><span class="chapter">Bookings</span><h2>Book the journey</h2></div>
+      <p class="lede">Clubs, festivals and private events.</p>
       <a class="mail" id="mail" href="mailto:madalice1997@gmail.com">madalice1997@gmail.com</a>
       <div class="row">
-        <a class="btn primary" id="mail-btn" href="mailto:madalice1997@gmail.com?subject=Booking%20enquiry%20%E2%80%94%20MAD%20ALICE">Send booking enquiry</a>
+        <a class="btn primary" id="mail-btn" href="mailto:madalice1997@gmail.com">Send booking enquiry</a>
         <button class="btn" id="copy" type="button">Copy email</button>
         <a class="btn" id="ig" href="#" target="_blank" rel="noopener" hidden>Instagram</a>
+        <a class="btn" id="sc" href="#" target="_blank" rel="noopener" hidden>SoundCloud</a>
       </div>
     </div>
   </section>
@@ -190,7 +204,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
 <footer>
   <div class="wrap">
-    <span>© <span id="year"></span> <span data-c="artistName">MAD ALICE</span></span>
+    <span>© <span id="year"></span> MAD ALICE</span>
     <span>djmadalice.com</span>
   </div>
 </footer>
@@ -202,46 +216,48 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   const toast = $('toast'); let tt;
   const say = m => { toast.textContent = m; toast.hidden = false; clearTimeout(tt); tt = setTimeout(() => toast.hidden = true, 2400); };
   $('year').textContent = new Date().getFullYear();
+  const el = (tag, cls, text) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; };
 
-  function el(tag, cls, text){ const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
+  function row(date, title, place, url){
+    const li = el('li', 'item');
+    li.appendChild(el('span', 'd', date || 'Date soon'));
+    if (url){ const a = el('a', 't', title || ''); a.href = url; a.target = '_blank'; a.rel = 'noopener'; li.appendChild(a); }
+    else li.appendChild(el('span', 't', title || ''));
+    li.appendChild(el('span', 'p', place || ''));
+    return li;
+  }
+  function fill(listId, emptyId, items, map){
+    (items || []).forEach(x => $(listId).appendChild(map(x)));
+    if (emptyId) $(emptyId).hidden = (items || []).length > 0;
+  }
 
   function render(c){
     document.querySelectorAll('[data-c]').forEach(n => { const v = c[n.dataset.c]; if (v) n.textContent = v; });
-    if (c.artistName) document.title = c.artistName;
     const meta = [c.genre, c.city].filter(Boolean).join('  ·  ');
     if (meta){ $('meta').textContent = meta; $('meta').hidden = false; }
-    if (!c.about) $('about').hidden = true;
+    if (!c.about) $('rabbit-hole').hidden = true;
+    const hero = (c.frames || []).find(f => /editorial|booth/.test(f.file)) || (c.frames || [])[0];
+    if (hero) $('hero-bg').style.backgroundImage = 'url("' + hero.file + '")';
 
-    // hero photo = first photo
-    if (c.photos && c.photos[0]) $('hero-bg').style.backgroundImage = 'url("' + c.photos[0].file + '")';
+    fill('transmissions-list', 'transmissions-empty', c.transmissions, t => row(t.date, t.title, t.type ? t.type + ' — listen ↗' : 'Listen ↗', t.url));
+    fill('live-list', 'live-empty', c.liveSets, t => row(t.date, t.title, 'Watch ↗', t.url));
+    fill('next-list', 'next-empty', c.nextStops, g => row(g.date, g.event, [g.venue, g.city].filter(Boolean).join(', ')));
+    if ((c.journeysSoFar || []).length){ fill('journeys-list', null, c.journeysSoFar, g => row(g.date, g.event, [g.venue, g.city].filter(Boolean).join(', '))); $('journeys').hidden = false; }
 
-    // listen
-    const links = [['SoundCloud', c.soundcloudUrl], ['Mixcloud', c.mixcloudUrl]].filter(x => x[1]);
-    links.forEach(([name, url]) => { const a = el('a', 'btn primary', 'Listen on ' + name); a.href = url; a.target = '_blank'; a.rel = 'noopener'; $('listen-row').appendChild(a); });
-    $('listen-empty').hidden = links.length > 0;
-
-    // gigs
-    const gigRow = g => { const li = el('li'); li.append(el('span', 'gig-date', g.date || 'Date soon'), el('span', 'gig-event', g.event || ''), el('span', 'gig-place', [g.venue, g.city].filter(Boolean).join(', '))); return li; };
-    (c.upcomingGigs || []).forEach(g => $('upcoming').appendChild(gigRow(g)));
-    $('upcoming-empty').hidden = (c.upcomingGigs || []).length > 0;
-    if ((c.pastGigs || []).length){ c.pastGigs.forEach(g => $('past').appendChild(gigRow(g))); $('past-wrap').hidden = false; }
-
-    // photos
-    (c.photos || []).forEach(p => {
+    (c.frames || []).forEach(p => {
       const f = el('figure'), fr = el('div', 'frame'), img = el('img');
       img.src = p.file; img.alt = p.alt || ''; img.loading = 'lazy'; fr.appendChild(img);
       const a = el('a', 'btn', 'Download'); a.href = p.file; a.download = p.downloadName || '';
-      f.append(fr, a); $('photos').appendChild(f);
+      f.append(fr, a); $('frames-grid').appendChild(f);
     });
 
-    // booking
     if (c.bookingEmail){
       $('mail').textContent = c.bookingEmail; $('mail').href = 'mailto:' + c.bookingEmail;
-      $('mail-btn').href = 'mailto:' + c.bookingEmail + '?subject=' + encodeURIComponent('Booking enquiry — ' + (c.artistName || ''));
+      $('mail-btn').href = 'mailto:' + c.bookingEmail + '?subject=' + encodeURIComponent('Booking enquiry — ' + (c.artistName || 'MAD ALICE'));
     }
     if (c.instagramUrl){ $('ig').href = c.instagramUrl; $('ig').hidden = false; }
+    if (c.soundcloudUrl){ $('sc').href = c.soundcloudUrl; $('sc').hidden = false; }
   }
-
   fetch('content.json', {cache: 'no-cache'}).then(r => r.json()).then(render).catch(() => {});
 
   $('copy').addEventListener('click', () => {
@@ -249,7 +265,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     (navigator.clipboard ? navigator.clipboard.writeText(t) : Promise.reject()).then(() => say('Email copied'), () => say(t));
   });
 
-  /* ---- Logo: record ring with an amber centre + stacked MAD / ALICE ---- */
+  /* Logo: record ring with an amber centre + stacked MAD / ALICE */
   const AMBER = '#e0954a';
   function drawLogo(canvas, ink){
     const ctx = canvas.getContext('2d'), size = 330, pad = 60, r = 262, gap = 80;
@@ -268,7 +284,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     ctx.fillText('MAD', tx, y0 + cap); ctx.fillText('ALICE', tx, y0 + cap * 2 + lg);
   }
   const fontsReady = (document.fonts && document.fonts.load) ? document.fonts.load('800 100px "Big Shoulders Display"').catch(() => {}) : Promise.resolve();
-  drawLogo($('logo'), '#efe8e2'); fontsReady.then(() => drawLogo($('logo'), '#efe8e2'));
+  drawLogo($('logo'), '#ece5de'); fontsReady.then(() => drawLogo($('logo'), '#ece5de'));
   function saveLogo(ink, name){
     fontsReady.then(() => { const c = document.createElement('canvas'); drawLogo(c, ink); c.toBlob(b => {
       if (!b) return say('Could not create the logo. Try again.');
@@ -276,7 +292,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     }, 'image/png'); });
   }
   $('dl-logo-white').addEventListener('click', () => saveLogo('#ffffff', 'MAD-ALICE-logo-white.png'));
-  $('dl-logo-black').addEventListener('click', () => saveLogo('#0f0d0c', 'MAD-ALICE-logo-black.png'));
+  $('dl-logo-black').addEventListener('click', () => saveLogo('#0b0a09', 'MAD-ALICE-logo-black.png'));
 })();
 </script>
 </body>
