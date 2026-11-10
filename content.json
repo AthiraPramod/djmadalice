@@ -39,5 +39,7 @@
       "alt": "MAD ALICE at the booth, black and white",
       "downloadName": "MAD-ALICE-editorial-bw.jpg"
     }
-  ]
+  ],
+  "_WHATSAPP": "Your bookings WhatsApp number with country code, digits only, e.g. 919876543210. Leave empty to hide the WhatsApp button.",
+  "whatsappNumber": ""
 }
