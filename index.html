@@ -12,13 +12,13 @@
 <meta name="theme-color" content="#0b0a09">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Display:wght@700;900&family=Big+Shoulders+Display:wght@800&family=Instrument+Sans:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Metal+Mania&family=Instrument+Sans:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400&display=swap">
 <style>
 /* Raw warehouse: near-black concrete, film grain, amber work-light. Stencil display type like crate labels; mono for labels; quiet sans for words. */
 :root{
-  --bg:#0b0a09; --surface:#161311; --fg:#ece5de; --muted:#8f857e; --line:#27211e; --ember:#e0954a; --rust:#b5562f;
-  --stencil:"Big Shoulders Stencil Display","Big Shoulders Display","Arial Narrow",Impact,sans-serif;
-  --display:"Big Shoulders Display","Arial Narrow",Impact,sans-serif;
+  --bg:#0b0a09; --surface:#161311; --fg:#ece5de; --muted:#8f857e; --line:#27211e; --ember:#c8323c; --rust:#7a0f18;
+  --stencil:"Metal Mania","UnifrakturCook",Georgia,serif;
+  --display:"Metal Mania",Georgia,serif;
   --body:"Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
   --mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
   color-scheme:dark;
@@ -39,7 +39,7 @@ a{color:inherit}
 
 nav{position:sticky;top:0;z-index:30;background:rgba(11,10,9,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px}
-.brand{font-family:var(--stencil);font-weight:900;font-size:24px;letter-spacing:.08em;text-decoration:none}
+.brand{font-family:var(--stencil);font-weight:400;font-size:26px;letter-spacing:.04em;text-decoration:none}
 .brand span{color:var(--ember)}
 .links{display:flex;gap:20px;flex-wrap:wrap}
 .links a{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;color:var(--muted)}
@@ -50,20 +50,20 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px
 .hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,10,9,.15),var(--bg) 94%)}
 .hero .wrap{position:relative;padding-block:clamp(100px,17vw,200px) clamp(48px,8vw,90px);display:grid;gap:20px}
 .meta{font-family:var(--mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--ember)}
-h1{font-family:var(--stencil);font-weight:900;text-transform:uppercase;margin:0;line-height:.82;font-size:clamp(88px,20vw,250px);letter-spacing:.01em}
+h1{font-family:var(--stencil);font-weight:400;text-transform:uppercase;margin:0;line-height:.9;font-size:clamp(76px,17vw,220px);letter-spacing:.01em;text-shadow:4px 4px 0 var(--rust),0 0 60px rgba(200,50,60,.35)}
 h1 .dot{color:var(--ember)}
 .tagline{font-style:italic;opacity:.88;font-size:clamp(19px,2.6vw,24px);margin:0;max-width:32ch}
 .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}
 .btn{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;border:1px solid var(--line);padding:13px 18px;background:transparent;color:var(--fg);cursor:pointer;transition:border-color .2s,color .2s,background .2s;display:inline-block}
 .btn:hover{border-color:var(--ember);color:var(--ember)}
-.btn.primary{background:var(--ember);border-color:var(--ember);color:#1a1210}
+.btn.primary{background:var(--ember);border-color:var(--ember);color:#fff}
 .btn.primary:hover{background:transparent;color:var(--ember)}
 .btn:focus-visible,.links a:focus-visible,.item a:focus-visible{outline:2px solid var(--ember);outline-offset:3px}
 
 section{padding-block:clamp(60px,9vw,120px);border-bottom:1px solid var(--line)}
 .head{display:flex;align-items:baseline;gap:18px;flex-wrap:wrap;margin-bottom:30px}
 .chapter{font-family:var(--mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--ember)}
-h2{font-family:var(--stencil);font-weight:900;text-transform:uppercase;font-size:clamp(36px,9vw,92px);line-height:.88;margin:0;letter-spacing:.01em}
+h2{font-family:var(--stencil);font-weight:400;text-transform:uppercase;font-size:clamp(34px,8vw,84px);line-height:.95;margin:0;letter-spacing:.01em;text-shadow:3px 3px 0 var(--rust)}
 .lede{color:var(--muted);margin:-14px 0 30px;max-width:48ch}
 .about-text{font-size:clamp(19px,2.3vw,24px);max-width:40ch;margin:0}
 .empty{color:var(--muted);font-style:italic;margin:0}
@@ -72,7 +72,7 @@ h2{font-family:var(--stencil);font-weight:900;text-transform:uppercase;font-size
 .list{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
 .item{display:grid;grid-template-columns:150px 1fr auto;gap:18px;align-items:baseline;padding:20px 0;border-bottom:1px solid var(--line)}
 .item .d{font-family:var(--mono);font-size:13px;color:var(--ember);letter-spacing:.06em;text-transform:uppercase}
-.item .t{font-family:var(--display);font-weight:800;font-size:28px;text-transform:uppercase;letter-spacing:.03em;line-height:1.05}
+.item .t{font-family:var(--display);font-weight:400;font-size:28px;text-transform:uppercase;letter-spacing:.03em;line-height:1.05}
 .item .p{color:var(--muted)}
 .item a.t{text-decoration:none}
 .item a.t:hover{color:var(--ember)}
@@ -283,24 +283,18 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   });
 
   /* Logo: record ring with an amber centre + stacked MAD / ALICE */
-  const AMBER = '#e0954a';
   function drawLogo(canvas, ink){
-    const ctx = canvas.getContext('2d'), size = 330, pad = 60, r = 262, gap = 80;
-    const font = '800 ' + size + 'px "Big Shoulders Display", "Arial Narrow", Impact, sans-serif';
+    const ctx = canvas.getContext('2d'), size = 300, pad = 70;
+    const font = size + 'px "Metal Mania", Georgia, serif';
     ctx.font = font;
-    const w = Math.max(ctx.measureText('MAD').width, ctx.measureText('ALICE').width);
-    const cap = size * 0.72, lg = 44, tx = pad + r * 2 + gap;
-    const W = Math.ceil(tx + w + pad), H = Math.ceil(Math.max(pad * 2 + cap * 2 + lg, pad * 2 + r * 2));
-    canvas.width = W; canvas.height = H; ctx.clearRect(0, 0, W, H);
-    const cx = pad + r, cy = H / 2;
-    ctx.strokeStyle = ink; ctx.lineWidth = 46; ctx.beginPath(); ctx.arc(cx, cy, r - 23, 0, Math.PI * 2); ctx.stroke();
-    ctx.lineWidth = 12; ctx.beginPath(); ctx.arc(cx, cy, r * 0.58, 0, Math.PI * 2); ctx.stroke();
-    ctx.fillStyle = AMBER; ctx.beginPath(); ctx.arc(cx, cy, r * 0.2, 0, Math.PI * 2); ctx.fill();
-    ctx.font = font; ctx.fillStyle = ink;
-    const y0 = (H - (cap * 2 + lg)) / 2;
-    ctx.fillText('MAD', tx, y0 + cap); ctx.fillText('ALICE', tx, y0 + cap * 2 + lg);
+    const w1 = ctx.measureText('MAD').width, w2 = ctx.measureText('ALICE').width, w = Math.max(w1, w2);
+    const lh = size * 0.92, W = Math.ceil(w + pad * 2 + 14), H = Math.ceil(lh * 2 + pad * 2);
+    canvas.width = W; canvas.height = H; ctx.clearRect(0, 0, W, H); ctx.font = font; ctx.textBaseline = 'alphabetic';
+    const rows = [['MAD', w1, pad + lh * 0.9], ['ALICE', w2, pad + lh * 1.9]];
+    for (let d = 12; d >= 1; d--){ ctx.fillStyle = 'rgb(' + (60 + d * 6) + ',8,16)'; rows.forEach(([t, tw, y]) => ctx.fillText(t, (W - tw) / 2 + d * 0.8, y + d)); }
+    ctx.fillStyle = ink; rows.forEach(([t, tw, y]) => ctx.fillText(t, (W - tw) / 2, y));
   }
-  const fontsReady = (document.fonts && document.fonts.load) ? document.fonts.load('800 100px "Big Shoulders Display"').catch(() => {}) : Promise.resolve();
+  const fontsReady = (document.fonts && document.fonts.load) ? document.fonts.load('100px "Metal Mania"').catch(() => {}) : Promise.resolve();
   drawLogo($('logo'), '#ece5de'); fontsReady.then(() => drawLogo($('logo'), '#ece5de'));
   function saveLogo(ink, name){
     fontsReady.then(() => { const c = document.createElement('canvas'); drawLogo(c, ink); c.toBlob(b => {
