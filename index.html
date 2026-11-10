@@ -83,6 +83,8 @@ h2{font-family:var(--stencil);font-weight:900;text-transform:uppercase;font-size
 .frame{background:var(--surface);overflow:hidden;aspect-ratio:3/4;width:100%}
 .frame img{width:100%;height:100%;object-fit:cover;filter:grayscale(.15);transition:transform .8s ease,filter .4s}
 figure:hover .frame img{transform:scale(1.03);filter:none}
+.feed{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px;align-items:start}
+.feed .instagram-media{min-width:0!important;width:100%!important;margin:0!important}
 .logo-box{margin-top:64px;display:grid;gap:16px}
 .logo-tile{background:var(--surface);padding:clamp(24px,5vw,56px);display:flex;justify-content:center}
 .logo-tile canvas{width:100%;max-width:620px;height:auto}
@@ -172,6 +174,15 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     </div>
   </section>
 
+  <section id="feed" hidden>
+    <div class="wrap">
+      <div class="head"><span class="chapter">On the gram</span><h2>@djmadalice</h2></div>
+      <p class="lede">Moments from the journey so far.</p>
+      <div class="feed" id="feed-grid"></div>
+      <div class="row" style="margin-top:28px"><a class="btn" id="ig-follow" href="https://www.instagram.com/djmadalice/" target="_blank" rel="noopener">Follow on Instagram</a></div>
+    </div>
+  </section>
+
   <section id="frames">
     <div class="wrap">
       <div class="head"><span class="chapter">Press kit</span><h2>Frames</h2></div>
@@ -255,7 +266,13 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       $('mail').textContent = c.bookingEmail; $('mail').href = 'mailto:' + c.bookingEmail;
       $('mail-btn').href = 'mailto:' + c.bookingEmail + '?subject=' + encodeURIComponent('Booking enquiry — ' + (c.artistName || 'MAD ALICE'));
     }
-    if (c.instagramUrl){ $('ig').href = c.instagramUrl; $('ig').hidden = false; }
+    if (c.instagramUrl){ $('ig').href = c.instagramUrl; $('ig').hidden = false; $('ig-follow').href = c.instagramUrl; }
+    const posts = (c.instagramPosts || []).filter(Boolean);
+    if (posts.length){
+      posts.forEach(u => { const q = document.createElement('blockquote'); q.className = 'instagram-media'; q.setAttribute('data-instgrm-permalink', u); q.setAttribute('data-instgrm-version', '14'); const a = el('a', null, 'View this post on Instagram'); a.href = u; q.appendChild(a); $('feed-grid').appendChild(q); });
+      $('feed').hidden = false;
+      const sc = document.createElement('script'); sc.async = true; sc.src = 'https://www.instagram.com/embed.js'; document.body.appendChild(sc);
+    }
     if (c.soundcloudUrl){ $('sc').href = c.soundcloudUrl; $('sc').hidden = false; }
   }
   fetch('content.json', {cache: 'no-cache'}).then(r => r.json()).then(render).catch(() => {});
